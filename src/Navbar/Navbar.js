@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom';
 //prevents to again reload response from server, intercepts the response
 // try to send request to server
 
+import './Navbar.css';
 
 const Navbar = () => {
     return (

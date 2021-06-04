@@ -1,10 +1,8 @@
-import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+import BlogList from "../BlogsList/BlogList";
+import useFetch from "../Hooks/useFetch";
 
 const Home = () => {
     const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs')
-
-    // url='http://localhost:8000/blogs'
 
     // const handleDelete = (id) => {
     //     const newBlogs = blogs.filter((blog) => blog.id !== id);

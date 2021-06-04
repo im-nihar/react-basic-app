@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+
+import "./Create.css"
 
 const Create = () => {
     const [title, setTitle] = useState("");

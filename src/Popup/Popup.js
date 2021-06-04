@@ -8,7 +8,7 @@ const Popup = ({ selectedBlog, handleClose }) => {
                 <div className='button-container'>
                     <button className="close-button" onClick={handleClose}> Close</button>
                 </div>
-                <h2>asd</h2>
+                <h2>Title</h2>
                 {/* <article>
                     <h2>{blog.title}</h2>
                     <p>Wirtten by {blog.author}</p>

@@ -1,19 +1,18 @@
 import './Popup.css';
 
-const Popup = ({ selectedBlog, handleClose }) => {
-    console.log("plese",selectedBlog);
+const Popup = ({ blog, handleClose }) => {
+    console.log("plese",blog);
     return (
         <div className="popup-box">
             <div className="box">
                 <div className='button-container'>
                     <button className="close-button" onClick={handleClose}> Close</button>
                 </div>
-                <h2>Title</h2>
-                {/* <article>
+                <article>
                     <h2>{blog.title}</h2>
                     <p>Wirtten by {blog.author}</p>
-                    <div>{blog.body}</div>
-                </article> */}
+                    <div className="blog-body">{blog.body}</div>
+                </article>
             </div>
         </div>
     )

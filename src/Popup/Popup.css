@@ -37,3 +37,13 @@
     background-color: #fff;
     box-shadow: 0px 0px 10px 0px lightgrey;
 }
+
+h2 {
+    font-size: 20px;
+    color: #f1356d;
+    margin-bottom: 10px;
+}
+
+.blog-body {
+    margin: 20px 0;
+}

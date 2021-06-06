@@ -12,13 +12,8 @@ const BlogList = ({ blogs, title }) => {
 
     const togglePopup = (blog) => {
         setIsOpen(!isOpen);
-        console.log(blog);
+        setSelectedBlog(blog)
     }
-
-    // const selectBlog = (blog) => {
-    //     console.log("yes",blog);
-    //     // console.log("blogss;", blog);
-    // }
 
     return (
         <div className="blog-list">
@@ -32,14 +27,14 @@ const BlogList = ({ blogs, title }) => {
                         </Link>
                     </div>
                     <div className="popup-button">
-                        <button className="button-popup" onClick={() => togglePopup(blog.id)}>Open Blog
+                        <button className="button-popup"   onClick={()=>togglePopup(blog)}>Open Blog
                         </button>
-                        {
-                            isOpen && <Popup  handleClose={togglePopup}></Popup>
-                        }
                     </div>
                 </div>
             ))}
+            {
+                isOpen && <Popup blog={selectedBlog}  handleClose={togglePopup}></Popup>
+            }
             {/* {     //to display when no more blogs
                 blogs && blogs.length === 0 &&
                 ( <div className="blog-preview"  >

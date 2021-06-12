@@ -51,8 +51,6 @@ const EditBlog = (props) => {
                 <form onSubmit={handleSubmit}>
                     <label>Blog title: </label>
                     <input
-                        // defaultValue={blog.title}
-                        // type="text"
                         required
                         name='title'
                         value={title}
@@ -60,7 +58,6 @@ const EditBlog = (props) => {
                     />
                     <label>Blog Content: </label>
                     <textarea
-                        // defaultValue={blog.body}
                         required
                         rows='5'
                         value={body}
@@ -68,21 +65,16 @@ const EditBlog = (props) => {
                     ></textarea>
                     <label>Blog Author: </label>
                     <select
-                        // defaultValue={blog.author}
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}>
                         <option value="mario">mario</option>
                         <option value="yoshi">yoshi</option>
                     </select>
-                    {/* <button>adddd</button> */}
                     {!isPending && <button> Edit Blog  </button>}
                     {isPending && <button disabled> Editing </button>}
                 </form>
             </div>}
         </div>
-        //     <div>
-        //         <h2>EDit blog here!!</h2>
-        //     </div>
     )
 }
 

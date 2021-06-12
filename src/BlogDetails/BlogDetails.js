@@ -1,5 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
+import { withRouter } from 'react-router';
 
 import "./BlogDetails.css"
 
@@ -19,19 +20,27 @@ const BlogDetails = () => {
     }
 
     return (
-        <div className="blog-details">
-            { isPending && <div> Loading... </div>}
-            {error && <div> {error}</div>}
-            {blog && (
-                <article>
-                    <h2>{blog.title}</h2>
-                    <p>Wirtten by {blog.author}</p>
-                    <div>{blog.body}</div>
-                    <button onClick={deleteHandler}>Delete Blog</button>
-                </article>
-            )}
+        <div>
+            <div className="blog-details">
+                {isPending && <div> Loading... </div>}
+                {error && <div> {error}</div>}
+                {blog && (
+                    <article>
+                        <h2>{blog.title}</h2>
+                        <p>Wirtten by {blog.author}</p>
+                        <div>{blog.body}</div>
+                        <div className='buttons-container'>
+                            <button onClick={() => history.push({ pathname: `/blogs/edit/${blog.id}`, state:blog })}>Edit Blog</button>
+
+                            <button onClick={deleteHandler}>Delete Blog</button>
+
+                            {/* <button onClick={() => setIsEditBlogShow(true)}>Edit the Real Blog</button> */}
+                        </div>
+                    </article>
+                )}
+            </div>
         </div>
     )
 }
 
-export default BlogDetails;
+export default withRouter(BlogDetails);

@@ -17,4 +17,11 @@
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
+    margin:  0 10px 0 0;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    padding: auto;
 }

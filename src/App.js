@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create/Create';
 import BlogDetails from './BlogDetails/BlogDetails';
 import NotFound from './NotFound/NotFound';
+import EditBlog from './EditBlog/EditBlog';
 
 
 function App() {
@@ -22,14 +23,20 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path='/'>
-              <Home> </Home>
+              <Home ></Home>
             </Route>
             <Route path='/create'>
               <Create></Create>
             </Route>
+            {/* <Route path='/blogs/edit/:id'>
+              <EditBlog></EditBlog>
+            </Route> */}
+            <Route path='/blogs/edit/:id' component={EditBlog} />  
+            {/* will automatically pass route props(dev tool props) */}
             <Route path='/blogs/:id'>
               <BlogDetails></BlogDetails>
             </Route>
+
             {/* '*' will catch any other route */}
             <Route path='*'>
               <NotFound></NotFound>
@@ -40,5 +47,7 @@ function App() {
     </Router>
   );
 }
+
+// complete match propety on route 
 
 export default App;
